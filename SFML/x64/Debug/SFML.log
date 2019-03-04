@@ -1,0 +1,5 @@
+﻿  CollisionManager.cpp
+x:\programming\sfml\sfml\collisionmanager.cpp(22): error C2059: syntax error: ')'
+  Collision.cpp
+  Generating Code...
+x:\programming\sfml\sfml\collision.cpp(22): warning C4715: 'Collision::TestCollision': not all control paths return a value
