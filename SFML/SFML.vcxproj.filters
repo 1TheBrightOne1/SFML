@@ -63,11 +63,17 @@
     <ClCompile Include="CharacterBuilder.cpp">
       <Filter>Source Files\Entity\Character\DerivedCharacters</Filter>
     </ClCompile>
-    <ClCompile Include="Collision.cpp">
-      <Filter>Source Files\Entity</Filter>
+    <ClCompile Include="Drawable.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionManager.cpp">
-      <Filter>Source Files\Entity</Filter>
+    <ClCompile Include="Skeleton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -83,9 +89,6 @@
     <ClInclude Include="Animation.h">
       <Filter>Header Files\Entity\Character\Animations</Filter>
     </ClInclude>
-    <ClInclude Include="Collision.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="Kinematics.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
@@ -98,8 +101,17 @@
     <ClInclude Include="CharacterBuilder.h">
       <Filter>Header Files\Entity\Character\DerivedCharacters</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionManager.h">
-      <Filter>Header Files\Entity</Filter>
+    <ClInclude Include="Skeleton.h">
+      <Filter>Header Files\Entity\Character\DerivedCharacters</Filter>
+    </ClInclude>
+    <ClInclude Include="Drawable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

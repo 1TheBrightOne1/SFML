@@ -4,7 +4,6 @@
 
 class Adventurer : public Character
 {
-	int m_moveSpeed = 60;
 	enum States
 	{
 		Idle,
@@ -21,8 +20,8 @@ class Adventurer : public Character
 		DownSmashCont,
 		DoubleJump
 	};
-	Character::States UpdateState(const sf::Int32& elapsedTime);
-	void ChangeKinematicsState();
+	void UpdateState(const sf::Int32& elapsedTime);
+	void StartNewState();
 	void InitializeAnimations();
 public:
 	Adventurer(const sf::Vector2f& startingPos);

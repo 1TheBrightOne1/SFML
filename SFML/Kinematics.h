@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+
 class Kinematics
 {
 	sf::Vector2f m_position;
@@ -12,7 +13,7 @@ public:
 		x,
 		y
 	};
-	Kinematics(sf::Vector2f pos = sf::Vector2f(0, 0), sf::Vector2f vel = sf::Vector2f(0, 0), sf::Vector2f acc = sf::Vector2f(0, 50));
+	Kinematics(sf::Vector2f pos = sf::Vector2f(0, 0), sf::Vector2f vel = sf::Vector2f(0, 0), sf::Vector2f acc = sf::Vector2f(0, 200.0f));
 	~Kinematics();
 	void Update(const sf::Int32& elapsedTime);
 	void SetVelocity(sf::Vector2f newVel);

@@ -2,10 +2,12 @@
 
 #include <memory>
 #include "Adventurer.h"
+#include "Skeleton.h"
 
 enum CharacterTypes
 {
-	Player
+	Player,
+	Skeleton
 };
 
 class CharacterBuilder

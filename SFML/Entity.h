@@ -1,16 +1,25 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "Drawable.h"
 #include "Kinematics.h"
+#include "AnimationManager.h"
 
-class Entity
+class Entity : public Drawable
 {
 protected:
-	sf::Sprite m_sprite;
+	enum States
+	{
+		Idle
+	};
+	States m_state = Idle;
 	Kinematics m_kinematics;
-	sf::Vector2i m_charSize;
+	AnimationManager m_animations;
+
+	virtual void InitializeAnimations() = 0;
+	virtual void UpdateState(const sf::Int32& elapsedTime) = 0;
+	virtual void StartNewState() = 0;
 public:
 	Entity(const sf::Vector2f& startingPosition);
-	void Draw(sf::RenderWindow& window);
 	void Update(const sf::Int32& elapsedTime);
 };

@@ -33,4 +33,5 @@ public:
 	void GetActiveFrame(const sf::Int32& elapsedTime, sf::Sprite& sprite);
 	bool AnimationFinished();
 	void SetFlipped(bool val) { m_flipAnimation = val; }
+	int Count() { return m_animations.size(); }
 };

@@ -1,6 +1,6 @@
 #include "Adventurer.h"
 
-Character::States Adventurer::UpdateState(const sf::Int32 & elapsedTime)
+void Adventurer::UpdateState(const sf::Int32 & elapsedTime)
 {
 	bool leftClicked = sf::Mouse::isButtonPressed(sf::Mouse::Left);
 	bool leftPressed = sf::Keyboard::isKeyPressed(sf::Keyboard::Left);
@@ -58,11 +58,18 @@ Character::States Adventurer::UpdateState(const sf::Int32 & elapsedTime)
 			newState = Idle;
 		break;
 	}
-	return static_cast<Character::States>(newState);
+
+	if (m_state != newState)
+	{
+		m_state = static_cast<Character::States>(newState);
+		StartNewState();
+	}
 }
 
-void Adventurer::ChangeKinematicsState()
+void Adventurer::StartNewState()
 {
+	m_animations.SetActiveAnimation(m_state);
+
 	switch (m_state)
 	{
 	case Idle:
@@ -78,7 +85,7 @@ void Adventurer::ChangeKinematicsState()
 		m_kinematics.SetVelocity(Kinematics::Dimension::x, 0);
 		break;
 	case Jump:
-		m_kinematics.SetVelocity(Kinematics::Dimension::y, -70);
+		m_kinematics.SetVelocity(Kinematics::Dimension::y, -200);
 		break;
 	case DownSmash:
 		m_kinematics.SetVelocity(Kinematics::Dimension::y, 1);
@@ -89,6 +96,7 @@ void Adventurer::ChangeKinematicsState()
 void Adventurer::InitializeAnimations()
 {
 	sf::Texture texture;
+	sf::Vector2i m_charSize{ 50, 37 };
 	texture.loadFromFile("Assets/AdventurerSheet.png", sf::IntRect(0, 0, m_charSize.x * 4, m_charSize.y));
 	m_animations.AddAnimation(Idle, AnimationManager::Builder{ texture, 4, 150 }.SetFrameSize(m_charSize));
 
@@ -113,6 +121,5 @@ void Adventurer::InitializeAnimations()
 
 Adventurer::Adventurer(const sf::Vector2f & startingPos) : Character(startingPos)
 {
-	m_charSize = sf::Vector2i(50, 37);
 	InitializeAnimations();
 }
